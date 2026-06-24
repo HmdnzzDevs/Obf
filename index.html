@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill's Lua Obfuscator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        
+        <header class="app-header">
+            <div class="title-bar">
+                <div class="icon-lock">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                </div>
+                <h1>Bill's Lua Obfuscator</h1>
+            </div>
+            <div class="action-bar">
+                <button id="copyBtn" class="btn btn-secondary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> Copy
+                </button>
+                <button id="downloadBtn" class="btn btn-secondary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> Download
+                </button>
+                <button id="obfuscateBtn" class="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg> 
+                    <span class="btn-text">Obfuscate</span>
+                </button>
+            </div>
+        </header>
+
+        <main class="content">
+            
+            <div class="panel highlight-blue">
+                <div class="panel-header">
+                    <div class="panel-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></div>
+                    <div class="panel-title">
+                        <h2>Original Lua Code</h2>
+                        <p>Ready for obfuscation</p>
+                    </div>
+                </div>
+                <div class="editor-wrap">
+                    <textarea id="inputCode" spellcheck="false" placeholder="Paste your Lua code here..."></textarea>
+                </div>
+            </div>
+
+            <div class="panel highlight-purple">
+                <div class="panel-header">
+                    <div class="panel-icon purple"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div>
+                    <div class="panel-title">
+                        <h2>Obfuscated Output</h2>
+                        <p>Protected & secured</p>
+                    </div>
+                </div>
+                <div class="editor-wrap">
+                    <textarea id="outputCode" spellcheck="false" readonly placeholder=""></textarea>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <div class="panel-icon blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></div>
+                    <div class="panel-title">
+                        <h2>Obfuscation Settings</h2>
+                        <p>Configure protection level</p>
+                    </div>
+                </div>
+                
+                <div class="settings-list">
+                    <label class="setting-item toggle-row">
+                        <div class="setting-info">
+                            <span class="setting-name">Mangle Names</span>
+                            <span class="setting-desc">Replace variable and function names with hexadecimal identifiers</span>
+                        </div>
+                        <div class="toggle"><input type="checkbox" id="t-mangle" checked><div class="toggle-switch"></div></div>
+                    </label>
+                    <label class="setting-item toggle-row">
+                        <div class="setting-info">
+                            <span class="setting-name">Encode Strings</span>
+                            <span class="setting-desc">Convert strings to byte arrays using string.char()</span>
+                        </div>
+                        <div class="toggle"><input type="checkbox" id="t-strings" checked><div class="toggle-switch"></div></div>
+                    </label>
+                    <label class="setting-item toggle-row">
+                        <div class="setting-info">
+                            <span class="setting-name">Minify Code</span>
+                            <span class="setting-desc">Remove comments and whitespace</span>
+                        </div>
+                        <div class="toggle"><input type="checkbox" id="t-minify" checked><div class="toggle-switch"></div></div>
+                    </label>
+
+                    <div class="section-divider">STRING ENCRYPTION</div>
+                    <div class="setting-item column-row">
+                        <div class="setting-info">
+                            <span class="setting-name">Encryption Algorithm</span>
+                            <span class="setting-desc">Choose how strings are encrypted (requires Encode Strings)</span>
+                        </div>
+                        <select class="custom-select" id="s-encryption">
+                            <option>None (Basic)</option>
+                            <option>XOR Cipher</option>
+                        </select>
+                    </div>
+
+                    <div class="section-divider">ADVANCED TECHNIQUES</div>
+                    <label class="setting-item toggle-row">
+                        <div class="setting-info">
+                            <span class="setting-name">Encode Numbers</span>
+                            <span class="setting-desc">Transform numeric literals into mathematical expressions</span>
+                        </div>
+                        <div class="toggle"><input type="checkbox" id="t-numbers"><div class="toggle-switch"></div></div>
+                    </label>
+                    <label class="setting-item toggle-row">
+                        <div class="setting-info">
+                            <span class="setting-name">Control Flow</span>
+                            <span class="setting-desc">Add opaque predicates to complicate control flow analysis</span>
+                        </div>
+                        <div class="toggle"><input type="checkbox" id="t-control"><div class="toggle-switch"></div></div>
+                    </label>
+                    <label class="setting-item toggle-row">
+                        <div class="setting-info">
+                            <span class="setting-name">Control Flow Flattening</span>
+                            <span class="setting-desc">Transform code into state machine patterns (CPU intensive)</span>
+                        </div>
+                        <div class="toggle"><input type="checkbox" id="t-flattening"><div class="toggle-switch"></div></div>
+                    </label>
+                    <label class="setting-item toggle-row">
+                        <div class="setting-info">
+                            <span class="setting-name">Dead Code Injection</span>
+                            <span class="setting-desc">Inject unreachable code blocks to confuse analysis</span>
+                        </div>
+                        <div class="toggle"><input type="checkbox" id="t-deadcode"><div class="toggle-switch"></div></div>
+                    </label>
+                    <label class="setting-item toggle-row">
+                        <div class="setting-info">
+                            <span class="setting-name">Anti-Debugging</span>
+                            <span class="setting-desc">Add runtime checks to detect debuggers and modified environments</span>
+                        </div>
+                        <div class="toggle"><input type="checkbox" id="t-antidebug"><div class="toggle-switch"></div></div>
+                    </label>
+
+                    <div class="section-divider">OUTPUT FORMAT</div>
+                    <div class="setting-item column-row">
+                        <div class="setting-info">
+                            <span class="setting-name">Code Style</span>
+                            <span class="setting-desc">Choose how the output code is formatted</span>
+                        </div>
+                        <select class="custom-select" id="s-style">
+                            <option>Minified (Compact)</option>
+                            <option>Beautified (Readable)</option>
+                        </select>
+                    </div>
+
+                    <div class="section-divider">PROTECTION LEVEL <span class="badge" id="sliderPercent">0%</span></div>
+                    <div class="slider-container">
+                        <input type="range" id="protectionLevel" min="0" max="100" value="0" step="10">
+                        <div class="slider-status">
+                            <span class="dot" id="statusDot"></span>
+                            <div class="status-text">
+                                <span class="status-title" id="statusTitle">No automatic obfuscation enabled</span>
+                                <span class="status-desc" id="statusDesc"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pro-tip">
+                        <div class="tip-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path></svg></div>
+                        <div class="tip-content">
+                            <strong>Pro Tip</strong>
+                            <p>Use the Protection Level slider for quick presets, or manually toggle individual techniques for fine-grained control. Higher protection levels provide stronger obfuscation but may impact performance.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
